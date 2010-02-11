@@ -22,10 +22,6 @@ The current beta release of the driver is based on the NCP3066 chip from OnSemi.
 
 Each driver circuit has a PWM pin for dimming control. If PWM functionality is not desired, this pin MUST have voltage. You can apply the input voltage to this pin if it's 25v or less.
 
-This project has been designed using the free version of CadSoft's Eagle program, available here:
-
-http://www.cadsoft.de/
-
 The downloads tab above has complete Eagle projects for two versions of the dual-driver:
 
   * dual_driver: This version is intended for production at a board house.
@@ -34,3 +30,13 @@ The downloads tab above has complete Eagle projects for two versions of the dual
 There are two resistors on each driver - connected to the COMP pin and the IPK pin - which are "tricky" values. In order to accommodate hobbyists that might not be able to easily find the exact values for these resistors, multiple pads have been provided. On the dual_driver version, there are two spots for through-hole resistors and one for an SMT resistor. On the homebrew version, there are two spots for through-hole resistors. The idea is that people implementing this design will be able to mix resistors in parallel to get the correct value, if needed.
 
 The BOM file with a version number matching the Eagle project zip contains a spreadsheet with names, values, notes, and digikey part numbers.
+
+= ZXLD1366 Triple Driver =
+
+The current beta release of the triple driver is based on the ZXLD1366 IC from Diodes Inc. Each IC will drive 12 LEDs up to 1A from 48v. The "common dimming" version of the driver has been designed such that a single PWM signal will dim all three strings of LEDs. Users who wish for separate dimming of each string can duplicate the base resistor and NPN transistor on the ADJ pin for each IC. Or, the IC can be fed an analog 0-2.5v DC signal on the ADJ pin for analog dimming. Please see the device's datasheet for information on dimming, as the sense resistor will need to be resized for analog dimming if the signal goes above 1.25v.
+
+= General Notes =
+
+This project has been designed using the free version of CadSoft's Eagle program, available here:
+
+http://www.cadsoft.de/
