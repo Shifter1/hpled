@@ -1,0 +1,1 @@
+A project to develop easy-to-build DIY HP LED drivers. See the Wiki tab for documentation.
